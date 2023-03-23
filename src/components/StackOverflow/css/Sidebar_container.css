@@ -1,0 +1,12 @@
+.sidebar_container_main{
+    display: flex;
+    min-height: 100vh;
+    min-width: fit-content;
+    background-color: black;
+    color: whitesmoke;
+}
+.sidebar_container_div1{
+    display: flex;
+    width: 100%;
+    justify-content: center
+}
