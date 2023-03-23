@@ -14,7 +14,6 @@ const MainQuestion = () => {
 const [show,setShow] = useState(false)
 const [answer,setAnswer] = useState("")
 const [comment, setComment] =useState("")
-const [vote,setVote] = useState(0)
 
 const [questionData, setQuestionData] = useState()
 
