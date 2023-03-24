@@ -114,7 +114,7 @@ const handleComment = async () =>{
                 <div className='all-questions-left'>
                     <div className='all-options'>
                         <p className='arrow'>🔼</p>
-                        <p className='arrow'>0</p>
+                        <p className='arrow'>2</p>
                         <p className='arrow'>🔽</p>
                         <Bookmark/>
                         <History/>
@@ -160,7 +160,7 @@ const handleComment = async () =>{
                         <div className='all-questions-left'>
                             <div className='all-options'>
                                 <p className='arrow'>🔼</p>
-                                <p className='arrow'>0</p>
+                                <p className='arrow'>3</p>
                                 <p className='arrow'>🔽</p>
                                 <Bookmark/>
                                 <History/>

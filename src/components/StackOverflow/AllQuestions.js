@@ -18,7 +18,7 @@ const AllQuestions = ({ques}) => {
             <div className='all-questions-left'>
                 <div className='all-options'>
                     <div className='all-option'>
-                        <p>0</p>
+                        <p>2</p>
                         <span>Votes</span>
                     </div>
                     <div className='all-option'>
