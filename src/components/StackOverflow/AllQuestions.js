@@ -26,12 +26,12 @@ const AllQuestions = ({ques}) => {
                         <span>Answers</span>
                     </div>
                     <div className='all-option'>
-                        <small>0 Views</small>
+                        <small>3 Views</small>
                     </div>
                 </div>
             </div>
             <div className='question-answer'>
-                <Link to={`/question?q=${ques?._id}`}>{ques?.title}</Link>
+                <Link  to={`/question?q=${ques?._id}`}>{ques?.title}</Link>
                 <div style={{width:"90%"}}>
                     <div>{ReactHtmlParser(maxLengthAnswer(ques?.body, 200))}</div>
                 </div>
