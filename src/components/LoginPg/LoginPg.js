@@ -251,7 +251,7 @@ const Login = () => {
 
           <Grid container>
             <Grid item xs>
-              <small variant="body2">Forgot password?</small>
+              <small style={{ cursor: "pointer" }} onClick={()=>history.push('/reset')} variant="body2">Forgot password?</small>
             </Grid>
             <Grid item>
               {register ? (
