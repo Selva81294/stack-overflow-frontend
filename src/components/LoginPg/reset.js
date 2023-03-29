@@ -10,7 +10,6 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useHistory } from "react-router-dom"
 
 function Copyright(props) {
   return (
@@ -39,10 +38,6 @@ const darkTheme = createTheme({
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("")
-
-  const history = useHistory()
-
-
 
   const handleForgotPassword = async (event ) =>{
     event.preventDefault();
