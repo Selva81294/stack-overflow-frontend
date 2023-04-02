@@ -22,7 +22,7 @@ const params = new URLSearchParams(search)
 const id = params.get("q")
 useEffect(()=>{
     async function getQuestionDetails(){
-        await axios.get(`https://stack-overflow-backend-kohl.vercel.app/api/question/${id}`,{
+        await axios.get(`https://stockoverflow-clone-backend.onrender.com/api/question/${id}`,{
             headers:{"x-auth-token": localStorage.getItem("token")}
         })
         .then((res)=>{
@@ -36,7 +36,7 @@ useEffect(()=>{
 },[id])
 
 async function getUpdatedAnswer(){
-    await axios.get(`https://stack-overflow-backend-kohl.vercel.app/api/question/${id}`,{
+    await axios.get(`https://stockoverflow-clone-backend.onrender.com/api/question/${id}`,{
         headers:{"x-auth-token": localStorage.getItem("token")}
     })
     .then((res)=>{
@@ -65,7 +65,7 @@ const handleSubmit = async ()=>{
                 "x-auth-token": localStorage.getItem("token")
             }
         }
-        await axios.post('https://stack-overflow-backend-kohl.vercel.app/api/answer', body, config)
+        await axios.post('https://stockoverflow-clone-backend.onrender.com/api/answer', body, config)
         .then((res)=>{
             // console.log(res.data)
             alert("answer added successfully")
@@ -83,7 +83,7 @@ const handleComment = async () =>{
             question_id: id,
             comment
         }
-        await axios.post(`https://stack-overflow-backend-kohl.vercel.app/api/comment/${id}`, commentBody , {
+        await axios.post(`https://stockoverflow-clone-backend.onrender.com/api/comment/${id}`, commentBody , {
             headers: {"x-auth-token": localStorage.getItem("token")}
         }).then((res)=>{
             setComment("")

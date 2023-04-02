@@ -54,7 +54,7 @@ const Login = () => {
     event.preventDefault();
     setLoading(true)
     try {
-      const res = await fetch("https://stack-overflow-backend-kohl.vercel.app/api/signup", {
+      const res = await fetch("https://stockoverflow-clone-backend.onrender.com/api/signup", {
         method: "POST",
         body: JSON.stringify({
           username,
@@ -78,7 +78,7 @@ const Login = () => {
     event.preventDefault();
     setLoading(true)
     try {
-      const res = await fetch("https://stack-overflow-backend-kohl.vercel.app/api/login", {
+      const res = await fetch("https://stockoverflow-clone-backend.onrender.com/api/login", {
         method: "POST",
         body: JSON.stringify({
           email,

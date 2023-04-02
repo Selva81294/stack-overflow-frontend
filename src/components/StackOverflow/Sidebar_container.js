@@ -24,7 +24,7 @@ const Sidebar_container = () => {
     };
 
     const getQuestions = async () =>{
-      await axios.get("https://stack-overflow-backend-kohl.vercel.app/api/question", {
+      await axios.get("https://stockoverflow-clone-backend.onrender.com/api/question", {
         headers:{"x-auth-token": localStorage.getItem("token")}
       })
       .then((res)=>{

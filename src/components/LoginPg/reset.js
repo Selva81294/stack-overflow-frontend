@@ -42,7 +42,7 @@ const ForgotPassword = () => {
   const handleForgotPassword = async (event ) =>{
     event.preventDefault();
     try {
-      const res = await fetch("https://stack-overflow-backend-kohl.vercel.app/api/forgotpassword", {
+      const res = await fetch("https://stockoverflow-clone-backend.onrender.com/api/forgotpassword", {
         method: "POST", crossDomain: true,
         body: JSON.stringify({
           email,

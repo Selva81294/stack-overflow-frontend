@@ -43,7 +43,7 @@ const handleSubmit = async (e) =>{
       tags,
     };
     await axios
-      .post("https://stack-overflow-backend-kohl.vercel.app/api/question", bodyJSON, {
+      .post("https://stockoverflow-clone-backend.onrender.com/api/question", bodyJSON, {
         headers:{"x-auth-token": localStorage.getItem("token")}
       })
       .then((res) => {
