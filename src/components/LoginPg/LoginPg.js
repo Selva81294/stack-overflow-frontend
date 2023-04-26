@@ -13,7 +13,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -45,62 +45,66 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
 
-  const history = useHistory()
-
+  const history = useHistory();
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-    setLoading(true)
+    setLoading(true);
     try {
-      const res = await fetch("https://stockoverflow-clone-backend.onrender.com/api/signup", {
-        method: "POST",
-        body: JSON.stringify({
-          username,
-          email,
-          password,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await fetch(
+        "https://stockoverflow-clone-backend.onrender.com/api/signup",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            username,
+            email,
+            password,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await res.json();
-      setLoading(false)
+      setLoading(false);
       setMessage(data.message);
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       console.log(error);
     }
   };
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    setLoading(true)
+    setLoading(true);
     try {
-      const res = await fetch("https://stockoverflow-clone-backend.onrender.com/api/login", {
-        method: "POST",
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-        headers: {
-          "Content-Type": "application/json"
-        },
-      });
+      const res = await fetch(
+        "https://stockoverflow-clone-backend.onrender.com/api/login",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await res.json();
       localStorage.setItem("token", data.token);
       setMessage(data.message);
-      if(data.token){
-        setLoading(false)
-        history.push('/mainpg')
-      }
-      else{
-        setLoading(false)
-        setMessage(data.message)
+      if (data.token) {
+        setLoading(false);
+        history.push("/mainpg");
+      } else {
+        setLoading(false);
+        setMessage(data.message);
       }
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       console.log(error);
     }
   };
@@ -143,7 +147,9 @@ const Login = () => {
                   label="User Name"
                   name="username"
                   value={username}
-                  onChange={(e)=>{setUsername(e.target.value)}}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                  }}
                   autoComplete="username"
                   autoFocus
                 />
@@ -155,7 +161,9 @@ const Login = () => {
                   label="Email Address"
                   name="email"
                   value={email}
-                  onChange={(e)=>{setEmail(e.target.value)}}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   autoComplete="email"
                   autoFocus
                 />
@@ -168,16 +176,26 @@ const Login = () => {
                   type="password"
                   id="password"
                   value={password}
-                  onChange={(e)=>{setPassword(e.target.value)}}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   autoComplete="current-password"
                 />
                 <FormControlLabel
                   control={<Checkbox value="remember" color="primary" />}
                   label="Remember me"
                 />
-                 {message !== "" && (
-          <p style={{color:"red", fontSize:"14px",textAlign:"center"}}>{message}</p>
-        )}
+                {message !== "" && (
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "14px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {message}
+                  </p>
+                )}
                 <Button
                   type="submit"
                   disabled={loading}
@@ -185,7 +203,7 @@ const Login = () => {
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
                 >
-                  {loading ? "Loading..." : "Signup"} 
+                  {loading ? "Loading..." : "Signup"}
                 </Button>
               </Box>
             </Container>
@@ -213,7 +231,9 @@ const Login = () => {
                   name="email"
                   autoComplete="email"
                   value={email}
-                  onChange={(e)=>{setEmail(e.target.value)}}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   autoFocus
                 />
                 <TextField
@@ -225,25 +245,35 @@ const Login = () => {
                   type="password"
                   id="password"
                   value={password}
-                  onChange={(e)=>{setPassword(e.target.value)}}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   autoComplete="current-password"
                 />
                 <FormControlLabel
                   control={<Checkbox value="remember" color="primary" />}
                   label="Remember me"
                 />
-                 {message !== "" && (
-          <p style={{color:"red", fontSize:"14px",textAlign:"center"}}>{message}</p>
-        )}
+                {message !== "" && (
+                  <p
+                    style={{
+                      color: "red",
+                      fontSize: "14px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {message}
+                  </p>
+                )}
                 <Button
                   type="submit"
                   disabled={loading}
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
-                  style={{height:"50px"}}
+                  style={{ height: "50px" }}
                 >
-                  {loading ? "Loading..." : "Login"} 
+                  {loading ? "Loading..." : "Login"}
                 </Button>{" "}
               </Box>{" "}
             </Container>
@@ -251,7 +281,13 @@ const Login = () => {
 
           <Grid container>
             <Grid item xs>
-              <small style={{ cursor: "pointer" }} onClick={()=>history.push('/reset')} variant="body2">Forgot password?</small>
+              <small
+                style={{ cursor: "pointer" }}
+                onClick={() => history.push("/reset")}
+                variant="body2"
+              >
+                Forgot password?
+              </small>
             </Grid>
             <Grid item>
               {register ? (
@@ -261,7 +297,6 @@ const Login = () => {
                   variant="body2"
                 >
                   {"Already Login?"}
-                  
                 </small>
               ) : (
                 <small
@@ -274,8 +309,25 @@ const Login = () => {
               )}
             </Grid>
           </Grid>
+          {register ? (
+            ""
+          ) : (
+            <div
+              style={{
+                textAlign: "center",
+                marginTop: "20px",
+                border: "1px solid red",
+                padding: "10px",
+              }}
+            >
+              <h3>Sample logins</h3>
+              <p>
+                Email: abcd@gmail.com{" "}
+                <span style={{ marginLeft: "10px" }}>PW: Selva1234</span>
+              </p>
+            </div>
+          )}
         </Box>
-
 
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
